@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function create() 
+    public function create()
     {
         return view("register.create");
     }
@@ -25,6 +25,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect("/")->with("success","Your account has been created.");
+        return redirect("/")->with("success", "Your account has been created.");
     }
 }

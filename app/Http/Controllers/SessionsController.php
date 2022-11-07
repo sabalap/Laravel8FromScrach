@@ -18,19 +18,19 @@ class SessionsController extends Controller
             "password" => "required"
         ]);
 
-        if(! auth()->attempt($attributes)) {
+        if (! auth()->attempt($attributes)) {
             throw ValidationException::withMessages([
                 "email" => "Your provided credentials could not be verified"
             ]);
         }
         session()->regenerate();
-        return redirect("/")->with("success","Welcome back!");
+        return redirect("/")->with("success", "Welcome back!");
     }
 
-    public function destroy() 
+    public function destroy()
     {
         auth()->logout();
 
-        return redirect("/")->with("success","Goodbye!");
+        return redirect("/")->with("success", "Goodbye!");
     }
 }
